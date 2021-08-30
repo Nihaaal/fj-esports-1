@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html,body{
+    font-family: 'Rubik'
+}
+
+body{
+    background-color: #11141A;
+}
+nav{
+    color: #99999B;
+}
+[x-cloak]{
+    display: none!important; 
+} 
+
+.dd{
+    background-color: #1C252C;
+    color: #99999B;
+}
+h1{
+    font-family: 'Montserrat';
+}
+
+.cta{
+    font-family: 'Rubik';
+    background-color: #88898C;
+    border-radius: 3px;
+}
+
+.dropdown{
+ background-color: #11141A; 
+}
+
+.featured{
+    background-color: #1C252C;
+}
+
+h2{
+    color: #99999B;
+}
+
+.sec{
+    color: #99999B;
+    font-family: 'Montserrat';
+}
+@media (min-width:475px) and (max-width:640px) {
+    .main-container{
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .hide{
+        display: none;
+    }
+}
+
+.accordion{
+    font-family: 'Montserrat';
+}
+
+.bg-main{
+    background-color: #88898C;
+}
+
+footer{
+    background-color: #1C252C;
+    font-family: 'Montserrat';
+}
+
+.text{
+    color: #99999B;
+}
+
+.pas{
+    padding-bottom: 1.5px;
+}

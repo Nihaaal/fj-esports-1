@@ -41,9 +41,9 @@
                     </div>
                     <div x-data="{ isShowing: false }" class="hidden sm:block sm:ml-6">
                         <div class="flex justify-end space-x-0.5 md:space-x-4">
-                            <a href="#" class=" px-3 py-2 rounded-md text-base md:text-lg lg:text-2xl font-medium"
+                            <a href="index.html" class=" px-3 py-2 rounded-md text-base md:text-lg lg:text-2xl font-medium"
                                 aria-current="page">HOME</a>
-                            <a href="#"
+                            <a href="freefire.html"
                                 class=" hover:underline hover:opacity-90 px-3 py-2 rounded-md text-base md:text-lg lg:text-2xl font-medium">TOURNAMENTS</a>
                             <a @click="isShowing = !isShowing" href="#"
                                 class=" hover:underline hover:opacity-90 px-3 py-2 rounded-md text-base md:text-lg lg:text-2xl font-medium">PROFILE</a>
@@ -68,7 +68,7 @@
                     </div>
                 </div>
             </div>
-            <div x-cloak x-show="open" x-transition:enter="transition ease-out duration-100"
+            <div x-cloak x-show="open" x-transition:enter="transition ease-out duration-100 z-10"
                 x-transition:enter-start="transform opacity-0 scale-95"
                 x-transition:enter-end="transform opacity-100 scale-100"
                 x-transition:leave="transition ease-in duration-75"
@@ -76,8 +76,8 @@
                 x-transition:leave-end="transform opacity-0 scale-95" class="sm:hidden absolute w-full"
                 id="mobile-menu">
                 <div class="px-2 pt-2 pb-3 dropdown space-y-1">
-                    <a href="#" class=" block px-3 py-2 rounded-md text-base font-medium" aria-current="page">HOME</a>
-                    <a href="#"
+                    <a href="index.html" class=" block px-3 py-2 rounded-md text-base font-medium" aria-current="page">HOME</a>
+                    <a href="freefire.html"
                         class=" hover:opacity-90 hover:underline block px-3 py-2 rounded-md text-base font-medium">TOURNAMENTS</a>
                     <a href="#" @click="isShowing = !isShowing"
                         class="hover:opacity-90 hover:underline block px-3 py-2 rounded-md text-base font-medium">PROFILE</a>

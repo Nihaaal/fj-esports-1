@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLO-BERMUDA REGISTRATION</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav x-data="{ open: false }">
+        <div id="navv" class="relative sm:hover:bg-transparent">
+            <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+                <div class="relative flex items-center justify-between h-16">
+                    <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                        <!-- Mobile menu button-->
+                        <button @click="open = !open" @click.outside="open = false" type="button"
+                            class="inline-flex items-center justify-center p-2 rounded-md hover:text-white hover:opacity-80 focus:outline-none"
+                            aria-controls="mobile-menu" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg x-cloak x-show="!open" class="block h-6 w-6 " xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                            <svg x-cloak x-show="open" class="h-6 w-6 " xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="md:mt-3 flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                        <div class="flex-shrink-0 flex items-center">
+                            <a href="#" class="text-3xl md:text-3xl lg:text-5xl font-bold">FJ ESPORTS</a>
+                        </div>
+                    </div>
+                    <div x-data="{ isShowing: false }" class="hidden sm:block sm:ml-6">
+                        <div class="flex justify-end space-x-0.5 md:space-x-4">
+                            <a href="index.html" class=" px-3 py-2 rounded-md text-base md:text-lg lg:text-2xl font-medium"
+                                aria-current="page">HOME</a>
+                            <a href="freefire.html"
+                                class=" hover:underline hover:opacity-90 px-3 py-2 rounded-md text-base md:text-lg lg:text-2xl font-medium">TOURNAMENTS</a>
+                            <a @click="isShowing = !isShowing" href="#"
+                                class=" hover:underline hover:opacity-90 px-3 py-2 rounded-md text-base md:text-lg lg:text-2xl font-medium">PROFILE</a>
+                        </div>
+                        <div x-cloak x-show="isShowing" @click.outside="isShowing = false"
+                            x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100"
+                            x-transition:leave-end="transform opacity-0 scale-95"
+                            class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg dd py-1 ring-1 ring-black ring-opacity-5 focus:outline-none"
+                            role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                            <!-- Active: "bg-gray-100", Not Active: "" -->
+                            <a href="#" class="block px-4 py-2 text-sm font-medium" role="menuitem" tabindex="-1"
+                                id="user-menu-item-0">MY TOURNAMENTS</a>
+                            <a href="#" class="block px-4 py-2 text-sm font-medium" role="menuitem" tabindex="-1"
+                                id="user-menu-item-1">MY ACCOUNT</a>
+                            <a href="#" class="block px-4 py-2 text-sm font-medium" role="menuitem" tabindex="-1"
+                                id="user-menu-item-2">SIGN OUT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div x-cloak x-show="open" x-transition:enter="transition ease-out duration-100"
+                x-transition:enter-start="transform opacity-0 scale-95"
+                x-transition:enter-end="transform opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-75"
+                x-transition:leave-start="transform opacity-100 scale-100"
+                x-transition:leave-end="transform opacity-0 scale-95" class="sm:hidden absolute w-full z-10"
+                id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 dropdown space-y-1">
+                    <a href="index.html" class=" block px-3 py-2 rounded-md text-base font-medium" aria-current="page">HOME</a>
+                    <a href="freefire.html"
+                        class=" hover:opacity-90 hover:underline block px-3 py-2 rounded-md text-base font-medium">TOURNAMENTS</a>
+                    <a href="#" @click="isShowing = !isShowing"
+                        class="hover:opacity-90 hover:underline block px-3 py-2 rounded-md text-base font-medium">PROFILE</a>
+                 </div>
+            </div>
+        </div>
+    </nav>
+    <!-- !LARGE SCREENS AND ABOVE: 1024PX AND ABOVE -->
+    <main class="mt-4 ml-20 mr-10 relative hidden lg:block">
+        <img class="inline-block" src="./images/dino 1.png.png" alt="">
+        <div class="absolute pl-10 -mt-3 inline-block">
+            <h3 class=" text-white font-bold text-40xl ">BERMUDA MATCH</h3>
+            <p class="font-medium text-3xl text-white ">SOLO</p>
+            <p class="font-medium text-xl text-white pt-2 ">21ST SEPTEMBER, 6PM</p>
+            <h3 class="font-bold text-xl text-white mt-8">RULES</h3>
+            <ol class="text xl:text-lg text-base">
+                <li>1. Please be respectful to all the participants.</li>
+                <li>2. Please be on time for your registration and for the actual tournament. You (and your team) will
+                    be disqualified on no-show.
+                </li>
+                <li>3. You and all of your teammates must be registered to qualify for the event.</li>
+                <li>4. You can play in this tournament only if you’re registered and in-game names match, otherwise you
+                    will be disqualified.</li>
+            </ol>
+            <h3 class="font-bold text-xl text-white mt-8">PRIZE</h3>
+            <p class="text xl:text-lg text-base">The winner will receive $20 as a reward.</p>
+        </div>
+        <button type="button"
+            class="absolute xl:right-28 right-4 xl:top-10 top-12 btn-join xl:px-4 xl:py-2 px-2 pb-1 font-bold text-xl">Register</button>
+
+    </main>
+
+    <!-- !SMALL SCREENS TO LARGE SCREENS: 640PX TO 1023PX -->
+
+    <main class="mt-4 ml-20 mr-10 relative hidden sm:block lg:hidden">
+        <img class="hidden md:inline-block" src="./images/dino 2_md.png" alt="">
+        <img src="./images/dino 3sm.png" alt="" class="sm:inline-block md:hidden">
+        <div class="absolute pl-8 -mt-3 inline-block">
+            <h3 class=" text-white font-bold text-40xl">BERMUDA MATCH</h3>
+            <p class="font-medium text-3xl text-white ">SOLO</p>
+            <p class="font-medium text-xl text-white pt-2 ">21ST SEPTEMBER, 6PM</p>
+            <button type="button" class="btn-join font-bold text-2xl py-2 mt-8">Register</button>
+        </div>
+        <div class="ml-2">
+            <h3 class="font-bold text-xl text-white mt-8">RULES</h3>
+            <ol class="text text-lg">
+                <li>1. Please be respectful to all the participants.</li>
+                <li>2. Please be on time for your registration and for the actual tournament. You (and your team) will
+                    be
+                    disqualified on no-show.
+                </li>
+                <li>3. You and all of your teammates must be registered to qualify for the event.</li>
+                <li>4. You can play in this tournament only if you’re registered and in-game names match, otherwise you
+                    will
+                    be disqualified.</li>
+            </ol>
+            <h3 class="font-bold text-xl text-white mt-8">PRIZE</h3>
+            <p class="text text-lg">The winner will receive $20 as a reward.</p>
+        </div>
+    </main>
+
+    <!-- !SMALL SCREENS TO MEDIUM SCREENS: 320PX TP 639PX -->
+    <main class="mt-4 ml-4 mr-4 relative sm:hidden">
+<img src="./images/dino 4xs.png" alt="" class="inline-block sm:hidden">
+<div class="absolute pl-4 -mt-1 inline-block">
+    <h3 class="text-white text-base font-bold">BERMUDA MATCH</h3>
+    <p class="font-medium text-14 text-white ">SOLO</p>
+    <p class="font-medium text-12 text-white pt-1 ">21ST SEPTEMBER, 6PM</p>
+    <button type="button" class="btn-bg font-bold text-12 rounded-md px-10 py-1 mt-3">Register</button>
+</div>
+<div class="ml-2">
+    <h3 class="font-bold text-14 text-white mt-4">RULES</h3>
+    <ol class="text text-10">
+        <li>1. Please be respectful to all the participants.</li>
+        <li>2. Please be on time for your registration and for the actual tournament. You (and your team) will
+            be
+            disqualified on no-show.
+        </li>
+        <li>3. You and all of your teammates must be registered to qualify for the event.</li>
+        <li>4. You can play in this tournament only if you’re registered and in-game names match, otherwise you
+            will
+            be disqualified.</li>
+    </ol>
+    <h3 class="font-bold text-14 text-white mt-4">PRIZE</h3>
+    <p class="text text-10">The winner will receive $20 as a reward.</p>
+</div>
+
+    </main>
+
+</body>
+
+</html>

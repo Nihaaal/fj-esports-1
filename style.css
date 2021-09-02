@@ -174,3 +174,28 @@ line-height: 17px;
 .btn-bg{
     background-color: #29A96B;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus{
+    -webkit-text-fill-color: #99999B;
+    -webkit-box-shadow: 0 0 0 30px black inset !important;
+    border-radius: 0.5px;
+    box-shadow: 0 0 0 30px black inset !important;
+}
+
+.register{
+    background-image: url(./images/dino\ 1regixter.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: max-content;
+
+}
+
+::placeholder{
+    color: black;
+    font-size: 12px;
+   
+}

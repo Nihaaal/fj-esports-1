@@ -6,9 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOLO-BERMUDA REGISTRATION</title>
+    <meta name="title" content="Fj Esports">
+    <meta name="description"
+        content="Fijis First Ever Esports Website. Play local tournaments with others and win money!">
+    <meta name="keywords" content="Fiji, Esports, FJ Esports, Gaming, Nihaal Prasad, Games, Tournaments.">
+    <meta name="robots" content="noindex">
+    <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-180x180.png" />
     <script src="//unpkg.com/alpinejs" defer></script>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="tailwind.css">
+   
 </head>
 
 <body>
@@ -41,12 +56,13 @@
                     </div>
                     <div x-data="{ isShowing: false }" class="hidden sm:block sm:ml-6">
                         <div class="flex justify-end space-x-0.5 md:space-x-4">
-                            <a href="index.html" class=" px-3 py-2 rounded-md text-base md:text-lg lg:text-2xl font-medium"
+                            <a href="index.html"
+                                class=" px-3 py-2 rounded-md text-base md:text-lg lg:text-2xl font-medium"
                                 aria-current="page">HOME</a>
-                            <a href="freefire.html"
+                            <a href="tournaments.html"
                                 class=" hover:underline hover:opacity-90 px-3 py-2 rounded-md text-base md:text-lg lg:text-2xl font-medium">TOURNAMENTS</a>
                             <a @click="isShowing = !isShowing" href="#"
-                                class=" hover:underline hover:opacity-90 px-3 py-2 rounded-md text-base md:text-lg lg:text-2xl font-medium">PROFILE</a>
+                                class=" hover:underline hover:opacity-90 px-3 py-2 rounded-md text-base md:text-lg lg:text-2xl font-medium logged-in  hidden">PROFILE</a>
                         </div>
                         <div x-cloak x-show="isShowing" @click.outside="isShowing = false"
                             x-transition:enter="transition ease-out duration-100"
@@ -55,15 +71,10 @@
                             x-transition:leave="transition ease-in duration-75"
                             x-transition:leave-start="transform opacity-100 scale-100"
                             x-transition:leave-end="transform opacity-0 scale-95"
-                            class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg dd py-1 ring-1 ring-black ring-opacity-5 focus:outline-none"
+                            class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg dd py-1 ring-1 ring-black ring-opacity-5 z-10 focus:outline-none"
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                            <!-- Active: "bg-gray-100", Not Active: "" -->
-                            <a href="#" class="block px-4 py-2 text-sm font-medium" role="menuitem" tabindex="-1"
-                                id="user-menu-item-0">MY TOURNAMENTS</a>
-                            <a href="#" class="block px-4 py-2 text-sm font-medium" role="menuitem" tabindex="-1"
+                            <a href="profile.html" class="block px-4 py-2 text-sm font-medium" role="menuitem" tabindex="-1"
                                 id="user-menu-item-1">MY ACCOUNT</a>
-                            <a href="#" class="block px-4 py-2 text-sm font-medium" role="menuitem" tabindex="-1"
-                                id="user-menu-item-2">SIGN OUT</a>
                         </div>
                     </div>
                 </div>
@@ -76,18 +87,19 @@
                 x-transition:leave-end="transform opacity-0 scale-95" class="sm:hidden absolute w-full z-10"
                 id="mobile-menu">
                 <div class="px-2 pt-2 pb-3 dropdown space-y-1">
-                    <a href="index.html" class=" block px-3 py-2 rounded-md text-base font-medium" aria-current="page">HOME</a>
-                    <a href="freefire.html"
+                    <a href="index.html" class=" block px-3 py-2 rounded-md text-base font-medium"
+                        aria-current="page">HOME</a>
+                    <a href="tournaments.html"
                         class=" hover:opacity-90 hover:underline block px-3 py-2 rounded-md text-base font-medium">TOURNAMENTS</a>
-                    <a href="#" @click="isShowing = !isShowing"
-                        class="hover:opacity-90 hover:underline block px-3 py-2 rounded-md text-base font-medium">PROFILE</a>
-                 </div>
+                    <button @click="isShowing = !isShowing"
+                        class="hover:opacity-90 hover:underline block px-3 py-2 rounded-md text-base font-medium logged-in  hidden">PROFILE</button>
+                </div>
             </div>
         </div>
     </nav>
     <!-- !LARGE SCREENS AND ABOVE: 1024PX AND ABOVE -->
     <main class="mt-4 ml-20 mr-10 relative hidden lg:block">
-        <img class="inline-block" src="./images/dino 1.png.png" alt="">
+        <img class="inline-block" src="./images/dino 1.png.png" alt="DINO">
         <div class="absolute pl-10 -mt-3 inline-block">
             <h3 class=" text-white font-bold text-40xl ">BERMUDA MATCH</h3>
             <p class="font-medium text-3xl text-white ">SOLO</p>
@@ -105,21 +117,22 @@
             <h3 class="font-bold text-xl text-white mt-8">PRIZE</h3>
             <p class="text xl:text-lg text-base">The winner will receive $20 as a reward.</p>
         </div>
-       <a href="register.html"> <button type="button"
-        class="absolute xl:right-28 right-4 xl:top-10 top-12 btn-join xl:px-4 xl:py-2 px-2 pb-1 font-bold text-xl">Register</button></a>
+        <a href="register.html"> <button type="button"
+                class="absolute xl:right-28 right-4 xl:top-10 top-12 btn-join xl:px-4 xl:py-2 px-2 pb-1 font-bold text-xl">Register</button></a>
 
     </main>
 
     <!-- !SMALL SCREENS TO LARGE SCREENS: 640PX TO 1023PX -->
 
     <main class="mt-4 ml-20 mr-10 relative hidden sm:block lg:hidden">
-        <img class="hidden md:inline-block" src="./images/dino 2_md.png" alt="">
-        <img src="./images/dino 3sm.png" alt="" class="sm:inline-block md:hidden">
+        <img class="hidden md:inline-block" src="./images/dino 2_md.png" alt="DINO">
+        <img src="./images/dino 3sm.png" alt="DINO" class="sm:inline-block md:hidden">
         <div class="absolute pl-8 -mt-3 inline-block">
             <h3 class=" text-white font-bold text-40xl">BERMUDA MATCH</h3>
             <p class="font-medium text-3xl text-white ">SOLO</p>
             <p class="font-medium text-xl text-white pt-2 ">21ST SEPTEMBER, 6PM</p>
-         <a href="register.html"><button type="button" class="btn-join font-bold text-2xl py-2 mt-8">Register</button></a>
+            <a href="register.html"><button type="button"
+                    class="btn-join font-bold text-2xl py-2 mt-8">Register</button></a>
         </div>
         <div class="ml-2">
             <h3 class="font-bold text-xl text-white mt-8">RULES</h3>
@@ -141,65 +154,69 @@
 
     <!-- !SMALL SCREENS TO MEDIUM SCREENS: 320PX TP 639PX -->
     <main class="mt-4 ml-4 mr-4 relative sm:hidden">
-<img src="./images/dino 4xs.png" alt="" class="inline-block sm:hidden">
-<div class="absolute pl-4 -mt-1 inline-block">
-    <h3 class="text-white text-base font-bold">BERMUDA MATCH</h3>
-    <p class="font-medium text-14 text-white ">SOLO</p>
-    <p class="font-medium text-12 text-white pt-1 ">21ST SEPTEMBER, 6PM</p>
-    <a href="register.html"><button type="button" class="btn-bg font-bold text-12 rounded-md px-10 py-1 mt-3">Register</button></a>
-</div>
-<div class="ml-2">
-    <h3 class="font-bold text-14 text-white mt-4">RULES</h3>
-    <ol class="text text-10">
-        <li>1. Please be respectful to all the participants.</li>
-        <li>2. Please be on time for your registration and for the actual tournament. You (and your team) will
-            be
-            disqualified on no-show.
-        </li>
-        <li>3. You and all of your teammates must be registered to qualify for the event.</li>
-        <li>4. You can play in this tournament only if you’re registered and in-game names match, otherwise you
-            will
-            be disqualified.</li>
-    </ol>
-    <h3 class="font-bold text-14 text-white mt-4">PRIZE</h3>
-    <p class="text text-10">The winner will receive $20 as a reward.</p>
-</div>
+        <img src="./images/dino 4xs.png" alt="DINO" class="inline-block sm:hidden">
+        <div class="absolute pl-4 -mt-1 inline-block">
+            <h3 class="text-white text-base font-bold">BERMUDA MATCH</h3>
+            <p class="font-medium text-sm text-white ">SOLO</p>
+            <p class="font-medium text-xs text-white pt-1 ">21ST SEPTEMBER, 6PM</p>
+            <a href="register.html"><button type="button"
+                    class="btn-bg font-bold text-xs rounded-md px-10 py-1 mt-3">Register</button></a>
+        </div>
+        <div class="ml-2">
+            <h3 class="font-bold text-sm text-white mt-4">RULES</h3>
+            <ol class="text text-10">
+                <li>1. Please be respectful to all the participants.</li>
+                <li>2. Please be on time for your registration and for the actual tournament. You (and your team) will
+                    be
+                    disqualified on no-show.
+                </li>
+                <li>3. You and all of your teammates must be registered to qualify for the event.</li>
+                <li>4. You can play in this tournament only if you’re registered and in-game names match, otherwise you
+                    will
+                    be disqualified.</li>
+            </ol>
+            <h3 class="font-bold text-sm text-white mt-4">PRIZE</h3>
+            <p class="text text-10">The winner will receive $20 as a reward.</p>
+        </div>
 
     </main>
 
-        <!-- !FOOTER SECTION WITH LINKS -->
-<footer class="mt-14 ">
-    <section class="grid lg:grid-cols-4 sm:grid-cols-2 ml-10 mr-6 grid-cols-1 gap-10 py-6 ">
-        <div>
-            <h3 class="text-white font-bold lg:text-lg text-base">SOCIAL LINKS</h3>
-            <a class="lg:text-base block mt-2 text font-semibold text-sm" href="">INSTAGRAM</a> 
-            <a class="lg:text-base block mt-2 text font-semibold text-sm" href="">FACEBOOK</a>
+    <!-- !FOOTER SECTION WITH LINKS -->
+    <footer class="mt-14 pb-4">
+        <section class="grid lg:grid-cols-4 sm:grid-cols-2 ml-10 mr-6 grid-cols-1 gap-10 py-6 ">
+            <div>
+                <h3 class="text-white font-bold lg:text-lg text-sm">SOCIAL LINKS</h3>
+                <a class="lg:text-base block mt-2 text font-semibold text-xs"
+                    href="https://www.instagram.com/fj_esports/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+                <a class="lg:text-base block mt-2 text font-semibold text-xs" href="">FACEBOOK</a>
+            </div>
+            <div>
+                <h3 class="text-white font-bold lg:text-lg text-sm">MORE INFO</h3>
+                <a class="lg:text-base block mt-2 text font-semibold text-xs" href="">ABOUT US</a>
+                <a class="lg:text-base block mt-2 text font-semibold text-xs" href="">TERMS OF SERVICE</a>
+            </div>
+            <div>
+                <h3 class="text-white font-bold lg:text-lg text-sm">OTHER RESOURCES</h3>
+                <a class="lg:text-base block mt-2 text font-semibold text-xs" href="contact.html">CONTACT US</a>
+                <a class="lg:text-base block mt-2 text font-semibold text-xs" href="">REFUND POLICY</a>
+            </div>
+            <div>
+                <h3 class="text-white font-bold lg:text-2xl text-base">Join Our Discord Community</h3>
+                <a class="lg:text-base block mt-2 text font-semibold text-xs" href="https://discord.gg/EVZb4pYjTY" target="_blank" rel="noopener">FJ
+                    ESPORTS DISCORD SERVER</a>
+            </div>
+        </section>
+        <div class="flex md:flex-row flex-col text flex-auto font-semibold ml-10 mr-6 pt-1 border-t border-opacity-5">
+            <div>
+                <h4 class="text-center md:text-left text-xs lg:text-sm">COPYRIGHT 2021 FJ ESPORTS | ALL RIGHTS RESERVED. </h4>
+            </div>
+            <div class="flex md:flex-row md:justify-end justify-center md:flex-grow ">
+                <p class="text-center text-xs lg:text-sm md:text-left"> MADE WITH LOVE BY LUCI.</p>
+                <a class="self-center pas mx-1" href="https://www.instagram.com/nihaaal_269/" target="_blank" rel="noopener"><img class="h-4 w-4"
+                        src="./images/instagram-brands.svg" alt="Instagram Logo"></a>
+            </div>
         </div>
-        <div>
-            <h3 class="text-white font-bold lg:text-lg text-base">MORE INFO</h3>
-            <a class="lg:text-base block mt-2 text font-semibold text-sm" href="">ABOUT US</a> 
-            <a class="lg:text-base block mt-2 text font-semibold text-sm" href="">TERMS OF SERVICE</a>
-        </div>
-        <div>
-            <h3 class="text-white font-bold lg:text-lg text-base">OTHER RESOURCES</h3>
-            <a class="lg:text-base block mt-2 text font-semibold text-sm" href="">CONTACT US</a> 
-            <a class="lg:text-base block mt-2 text font-semibold text-sm" href="">COMING SOON</a>
-        </div>
-        <div>
-            <h3 class="text-white font-bold lg:text-2xl text-xl">Join Our Discord Community</h3>
-            <a class="lg:text-base block mt-2 text font-semibold text-sm" href="">FJ ESPORTS DISCORD SERVER</a> 
-        </div>
-    </section>
-    <div class="flex md:flex-row flex-col text flex-auto font-semibold ml-10 mr-6 pt-1 border-t border-opacity-5">
-     <div>
-         <h4 class="text-center md:text-left">COPYRIGHT 2021 FJ ESPORTS | ALL RIGHTS RESERVED. </h4>
-     </div>
-     <div class="flex md:flex-row md:justify-end justify-center md:flex-grow">
-        <p class="text-center md:text-left"> MADE WITH LOVE BY LUCI.</p>
-         <a class="self-center pas mx-1" href="https://www.instagram.com/nihaaal_269/"><img class="h-4 w-4" src="./images/instagram-brands.svg" alt=""></a>
-     </div>
-    </div>
-</footer>
+    </footer>
 
 </body>
 

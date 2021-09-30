@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register - Fiji eSports</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Tournaments - Fiji eSports</title>
     <meta name="title" content="Fj Esports">
     <meta name="description"
         content="Fijis First Ever Esports Website. Play local tournaments with others and win money!">
     <meta name="keywords" content="Fiji, Esports, FJ Esports, Gaming, Nihaal Prasad, Games, Tournaments.">
-    <meta name="robots" content="noindex">
+    <meta name="robots" content="index, follow">
     <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-touch-icon-57x57.png" />
@@ -22,11 +22,20 @@
     <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-touch-icon-152x152.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-180x180.png" />
     <script src="//unpkg.com/alpinejs" defer></script>
-    <link rel="stylesheet" href="tailwind.css" />
+        <link rel="stylesheet" href="tailwind.css">
+        <style>
+            html,body{
+                background-color: #1C252C;
+            }
+            footer{
+                background-color: #11141A;
+            }
+        </style>
+   
 </head>
 
 <body>
-    <nav x-data="{ open: false }">
+    <nav class="relative" x-data="{ open: false }">
         <div id="navv" class="relative sm:hover:bg-transparent">
             <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                 <div class="relative flex items-center justify-between h-16">
@@ -97,94 +106,78 @@
         </div>
     </nav>
 
-    <main class="mx-auto mt-10 relative register flex justify-center pb-10 rounded-xl pt-4 md:px-52 sm:px-20">
-        <div class="w-full">
-            <h3 class="sm:text-3xl text-xl text-white text-center font-bold">BERMUDA MATCH</h3>
-            <p class="sm:text-xl text-lg text-white text-center font-medium -mt-2">SOLO</p>
-            <form action="#" method="POST">
-                <div class="sm:w-96 w-screen">
-                    <label for="in-game-name" class="block mt-4 text-base sm:text-lg font-medium text-white">IN-GAME
-                        NAME</label>
-                    <div class="mt-3">
-                        <input id="in-game-name" placeholder="Enter In-Game Name" name="in-game-name" type="text"
-                            required
-                            class="w-full text-sm sm:text-base py-2 px-3 text-white bg-black bg-opacity-80 rounded-sm focus:border-indigo-100 text shadow-sm">
-                    </div>
-                </div>
-                <div>
-                    <label for="uid" class="block mt-4 sm:text-lg text-base font-medium text-white">UID</label>
-                    <div class="mt-3">
-                        <input id="uid" placeholder="Enter UID" name="uid" type="text"
-                            class="w-full text-sm sm:text-base focus:bg-black py-2 px-3 bg-black bg-opacity-80 rounded-sm focus:border-indigo-100 text shadow-sm">
-                    </div>
-                </div>
-                <div class="flex items-center mt-4 justify-center">
-                    <input type="checkbox" name="terms-and-privacy" id="terms-and-privacy" required
-                        class="sm:h-4 sm:w-4 h-3 w-3 rounded ">
-                    <label for="terms-and-privacy" class="sm:text-base text-sm ml-2 block font-medium text-white">I
-                        agree to the
-                        <a href="" class="text-indigo-300 hover:text-opacity-70">Terms</a> and
-                        <a href="" class="text-indigo-300 hover:text-opacity-70">Privacy Policy</a>.
-                    </label>
-                </div>
-                <div>
-                    <button type="submit" id="onSub"
-                        class="mx-auto flex justify-center py-1 px-7 border mt-4 border-transparent btn-bg rounded-md shadow-md text-sm sm:text-base font-bold ">Register</button>
-                </div>
-            </form>
-        </div>
-    </main>
-
-    <!-- !FOOTER SECTION WITH LINKS -->
-    <footer class="mt-14 pb-4">
-        <section class="grid lg:grid-cols-4 sm:grid-cols-2 ml-10 mr-6 grid-cols-1 gap-10 py-6 ">
-            <div>
-                <h3 class="text-white font-bold lg:text-lg text-sm">SOCIAL LINKS</h3>
-                <a class="lg:text-base block mt-2 text font-semibold text-xs"
-                    href="https://www.instagram.com/fj_esports/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
-                <a class="lg:text-base block mt-2 text font-semibold text-xs" href="">FACEBOOK</a>
-            </div>
-            <div>
-                <h3 class="text-white font-bold lg:text-lg text-sm">MORE INFO</h3>
-                <a class="lg:text-base block mt-2 text font-semibold text-xs" href="">ABOUT US</a>
-                <a class="lg:text-base block mt-2 text font-semibold text-xs" href="">TERMS OF SERVICE</a>
-            </div>
-            <div>
-                <h3 class="text-white font-bold lg:text-lg text-sm">OTHER RESOURCES</h3>
-                <a class="lg:text-base block mt-2 text font-semibold text-xs" href="contact.html">CONTACT US</a>
-                <a class="lg:text-base block mt-2 text font-semibold text-xs" href="">REFUND POLICY</a>
-            </div>
-            <div>
-                <h3 class="text-white font-bold lg:text-2xl text-base">Join Our Discord Community</h3>
-                <a class="lg:text-base block mt-2 text font-semibold text-xs" href="https://discord.gg/EVZb4pYjTY" target="_blank" rel="noopener">FJ
-                    ESPORTS DISCORD SERVER</a>
-            </div>
-        </section>
-        <div class="flex md:flex-row flex-col text flex-auto font-semibold ml-10 mr-6 pt-1 border-t border-opacity-5">
-            <div>
-                <h4 class="text-center md:text-left text-xs lg:text-sm">COPYRIGHT 2021 FJ ESPORTS | ALL RIGHTS RESERVED. </h4>
-            </div>
-            <div class="flex md:flex-row md:justify-end justify-center md:flex-grow ">
-                <p class="text-center text-xs lg:text-sm md:text-left"> MADE WITH LOVE BY LUCI.</p>
-                <a class="self-center pas mx-1" href="https://www.instagram.com/nihaaal_269/" target="_blank" rel="noopener"><img class="h-4 w-4"
-                        src="./images/instagram-brands.svg" alt="Instagram Logo"></a>
-            </div>
-        </div>
-    </footer>
-
-
-
-</body>
-
-</html>
-
-<!-- <main class="mt-4 mx-auto relative reg">
-
-<div>
-    <div class="absolute text-center">
-<h3 class="text-40xl text-white">BERMUDA MATCH</h3>
-<p class="text-3xl text-white">SOLO</p>
+<h1 class="text-white text-4xl text-center px-4 font-bold mt-16">ALL TOURNAMENTS</h1>
+<p class="tour-title font-semibold px-4 text-center mt-3 text-2xl">Click on the Tournament You Want To Play In!</p>
+<!-- $TOURNAMENTS CARD SECTION -->
+<main class="grid lg:grid-cols-3 grid-cols-3 sm:grid-cols-2  mx-auto mt-7 ">
+<a class="block" href="fortnite.html">
+    <div class="fort-tourney mx-auto flex justify-center items-end mt-8">
+        <p class="card-text text-center pb-4 px-2">FORTNITE</p>
     </div>
-</div>
+</a>
+<a class="block" href="callofduty.html">
+    <div class="cod-tourney mx-auto flex justify-center items-end mt-8">
+        <p class="card-text text-center pb-4 px-2">CALL OF DUTY MOBILE</p>
+    </div>
+</a>
+<a class="block" href="tournaments.html">
+    <div class="ff-tourney mx-auto flex justify-center items-end mt-8">
+        <p class="card-text text-center pb-4 px-2">GARENA FREE FIRE</p>
+    </div>
+</a>
+<a class="block" href="pubg.html">
+    <div class="pubg-tourney mx-auto flex justify-center items-end mt-8">
+        <p class="card-text text-center pb-4 px-2">PLAYER UNKNOWN BATTLEGROUNDS MOBILE</p>
+    </div>
+</a>
+<a class="block" href="wildrift.html">
+    <div class="wr-tourney mx-auto flex justify-center items-end mt-8">
+        <p class="card-text text-center pb-4 px-2">WILD RIFT</p>
+    </div>
+</a>
+<a class="block" href="#">
+    <div class="new-tourney mx-auto flex justify-center items-center mt-8">
+        <p class="card-text text-center pb-4 px-2">COMING SOON!</p>
+    </div>
+</a>
+</main>
 
-</main> -->
+<footer class="mt-14 pb-4">
+    <section class="grid lg:grid-cols-4 sm:grid-cols-2 ml-10 mr-6 grid-cols-1 gap-10 py-6 ">
+        <div>
+            <h3 class="text-white font-bold lg:text-lg text-sm">SOCIAL LINKS</h3>
+            <a class="lg:text-base block mt-2 text font-semibold text-xs"
+                href="https://www.instagram.com/fj_esports/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+            <a class="lg:text-base block mt-2 text font-semibold text-xs" href="">FACEBOOK</a>
+        </div>
+        <div>
+            <h3 class="text-white font-bold lg:text-lg text-sm">MORE INFO</h3>
+            <a class="lg:text-base block mt-2 text font-semibold text-xs" href="">ABOUT US</a>
+            <a class="lg:text-base block mt-2 text font-semibold text-xs" href="">TERMS OF SERVICE</a>
+        </div>
+        <div>
+            <h3 class="text-white font-bold lg:text-lg text-sm">OTHER RESOURCES</h3>
+            <a class="lg:text-base block mt-2 text font-semibold text-xs" href="contact.html">CONTACT US</a>
+            <a class="lg:text-base block mt-2 text font-semibold text-xs" href="">REFUND POLICY</a>
+        </div>
+        <div>
+            <h3 class="text-white font-bold lg:text-2xl text-base">Join Our Discord Community</h3>
+            <a class="lg:text-base block mt-2 text font-semibold text-xs" href="https://discord.gg/EVZb4pYjTY" target="_blank" rel="noopener">FJ
+                ESPORTS DISCORD SERVER</a>
+        </div>
+    </section>
+    <div class="flex md:flex-row flex-col text flex-auto font-semibold ml-10 mr-6 pt-1 border-t border-opacity-5">
+        <div>
+            <h4 class="text-center md:text-left text-xs lg:text-sm">COPYRIGHT 2021 FJ ESPORTS | ALL RIGHTS RESERVED. </h4>
+        </div>
+        <div class="flex md:flex-row md:justify-end justify-center md:flex-grow ">
+            <p class="text-center text-xs lg:text-sm md:text-left"> MADE WITH LOVE BY LUCI.</p>
+            <a class="self-center pas mx-1" href="https://www.instagram.com/nihaaal_269/" target="_blank" rel="noopener"><img class="h-4 w-4"
+                    src="./images/instagram-brands.svg" alt="Instagram Logo"></a>
+        </div>
+    </div>
+</footer>
+
+    </body>
+    </html>
+    

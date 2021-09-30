@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreeFire Tournaments - Fiji eSports</title>
+    <title>Contact - Fiji eSports</title>
     <meta name="title" content="Fj Esports">
     <meta name="description"
         content="Fijis First Ever Esports Website. Play local tournaments with others and win money!">
@@ -24,10 +24,15 @@
     <script src="//unpkg.com/alpinejs" defer></script>
         <link rel="stylesheet" href="tailwind.css">
    
+    <style>
+        body {
+            background-color: #141A1F;
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="ff-header relative" x-data="{ open: false }">
+    <nav x-data="{ open: false }">
         <div id="navv" class="relative sm:hover:bg-transparent">
             <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                 <div class="relative flex items-center justify-between h-16">
@@ -73,8 +78,11 @@
                             x-transition:leave-end="transform opacity-0 scale-95"
                             class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg dd py-1 ring-1 ring-black ring-opacity-5 focus:outline-none"
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                            <a href="profile.html" class="block px-4 py-2 text-sm font-medium" role="menuitem" tabindex="-1"
-                                id="user-menu-item-1">MY ACCOUNT</a>
+                            <!-- Active: "bg-gray-100", Not Active: "" -->
+                            <!-- <!----> -->
+                            <a href="signup.html" class="block px-4 py-2 text-sm font-medium" role="menuitem"
+                                tabindex="-1" id="user-menu-item-1">MY ACCOUNT</a>
+    
                         </div>
                     </div>
                 </div>
@@ -96,93 +104,30 @@
                 </div>
             </div>
         </div>
-        <header class="absolute bottom-1 md:left-20 left-10 mr-4 md:mr-0">
-            <img class="sm:w-32 sm:h-32 h-24 w-24 rounded
-            " src="./images/FF-AVATAR 1.png.png" alt="free fire avatar">
-            <h3 class="lg:text-4xl sm:text-2xl text-xl text-white font-bold">Garena Free Fire Tournaments</h3>
-            <p class="text lg:text-2xl sm:text-lg text-lg font-medium">Find all the tournaments happening in Fiji! Click
-                on ‘Join’ to enter!</p>
-        </header>
     </nav>
 
-
-    <main class="pt-5 sm:ml-20 sm:mr-16 px-3 sm:px-0 ">
-        <div class="flex md:flex-row flex-col md:justify-between">
-            <h3 class="text-center md:text-left text-3xl sm:text-4xl md:text-2xl font-bold text-white uppercase">All
-                tournaments
-            </h3>
+    <main class="text-center mt-1 mx-auto">
+        <div class="w-3/4 h-3/4 mx-auto lg:w-2/5 lg:h-2/5">
+            <img src="./images/32.png" alt="Floating Submarine">
+        </div>
+        <div class="text-white mx-auto">
+            <h4 class="font-bold text-xl sm:text-2xl lg:text-5xl text-center">Contact Us</h4>
+            <p class="font-medium text-base sm:text-xl lg:text-3xl text-center px-4 sm:px-0 lg:mt-2">Have some issues
+                and want
+                to clear your doubts?</p>
+            <div class="flex justify-evenly flex-col sm:flex-row mx-auto mt-3">
+                <div>
+                    <p class="text-center text-sm sm:text-base lg:text-xl">Send us an email:<a
+                            href="mailto:nihaalprasad24@gmail.com"
+                            class="block text-indigo-500">nihaalprasad24@gmail.com</a></p>
+                </div>
+                <div>
+                    <p class="text-center text-sm sm:text-base lg:text-xl mt-2 sm:mt-0">Message us on Viber:<span
+                            class=" block text-indigo-500">2155783</span></p>
+                </div>
+            </div>
         </div>
     </main>
-    <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-end items-center md:ml-14 md:mr-0 xl:ml-20 xl:mr-0 lg:mr-0 lg:ml-6 center">
-        <div class="mx-auto md:mx-0">
-            <div class="card mt-10 shadow-2xl relative rounded-b-lg">
-                <figure class="image"></figure>
-                <p class="cont absolute right-2 mt-3 text-white text-center">SOLO</p>
-                <h3 class="font-medium grid-header absolute text-white mt-8 ml-3">BERMUDA MATCH</h3>
-                <p class="text ml-3 absolute grid-para mt-16 pt-2">21ST SEPTEMBER | 6PM</p>
-                <a href="join.html"><button type="button"
-                        class="absolute grid-btn font-bold text-center right-2 bottom-5">JOIN</button></a>
-            </div>
-        </div>
-
-        <div class="mx-auto md:mx-0">
-            <div class="card mt-10 shadow-2xl relative rounded-b-lg">
-                <figure class="image"></figure>
-                <p class="cont absolute right-2 mt-3 text-white text-center">SOLO</p>
-                <h3 class="font-medium grid-header absolute text-white mt-8 ml-3">BERMUDA MATCH</h3>
-                <p class="text ml-3 absolute grid-para mt-16 pt-2">21ST SEPTEMBER | 6PM</p>
-                <a href="join.html"><button type="button"
-                        class="absolute grid-btn font-bold text-center right-2 bottom-5">JOIN</button></a>
-            </div>
-        </div>
-
-        <div class="mx-auto md:mx-0">
-            <div class="card mt-10 shadow-2xl relative rounded-b-lg">
-                <figure class="image"></figure>
-                <p class="cont absolute right-2 mt-3 text-white text-center">SOLO</p>
-                <h3 class="font-medium grid-header absolute text-white mt-8 ml-3">BERMUDA MATCH</h3>
-                <p class="text ml-3 absolute grid-para mt-16 pt-2">21ST SEPTEMBER | 6PM</p>
-                <a href="join.html"><button type="button"
-                        class="absolute grid-btn font-bold text-center right-2 bottom-5">JOIN</button></a>
-            </div>
-        </div>
-
-        <div class="mx-auto md:mx-0">
-            <div class="card mt-10 shadow-2xl relative rounded-b-lg">
-                <figure class="image"></figure>
-                <p class="cont absolute right-2 mt-3 text-white text-center">SOLO</p>
-                <h3 class="font-medium grid-header absolute text-white mt-8 ml-3">BERMUDA MATCH</h3>
-                <p class="text ml-3 absolute grid-para mt-16 pt-2">21ST SEPTEMBER | 6PM</p>
-                <a href="join.html"><button type="button"
-                        class="absolute grid-btn font-bold text-center right-2 bottom-5">JOIN</button></a>
-            </div>
-        </div>
-
-        <div class="mx-auto md:mx-0">
-            <div class="card mt-10 shadow-2xl relative rounded-b-lg">
-                <figure class="image"></figure>
-                <p class="cont absolute right-2 mt-3 text-white text-center">SOLO</p>
-                <h3 class="font-medium grid-header absolute text-white mt-8 ml-3">BERMUDA MATCH</h3>
-                <p class="text ml-3 absolute grid-para mt-16 pt-2">21ST SEPTEMBER | 6PM</p>
-                <a href="join.html"><button type="button"
-                        class="absolute grid-btn font-bold text-center right-2 bottom-5">JOIN</button></a>
-            </div>
-        </div>
-
-        <div class="mx-auto md:mx-0">
-            <div class="card mt-10 shadow-2xl relative rounded-b-lg">
-                <figure class="image"></figure>
-                <p class="cont absolute right-2 mt-3 text-white text-center">SOLO</p>
-                <h3 class="font-medium grid-header absolute text-white mt-8 ml-3">BERMUDA MATCH</h3>
-                <p class="text ml-3 absolute grid-para mt-16 pt-2">21ST SEPTEMBER | 6PM</p>
-                <a href="join.html"><button type="button"
-                        class="absolute grid-btn font-bold text-center right-2 bottom-5">JOIN</button></a>
-            </div>
-        </div>
-    </div>
-
-
     <!-- !FOOTER SECTION WITH LINKS -->
     <footer class="mt-14 pb-4">
         <section class="grid lg:grid-cols-4 sm:grid-cols-2 ml-10 mr-6 grid-cols-1 gap-10 py-6 ">
@@ -219,10 +164,6 @@
             </div>
         </div>
     </footer>
-
-
-
-
 </body>
 
 </html>

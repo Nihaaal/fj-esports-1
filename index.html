@@ -5,7 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fj eSports</title>
+    <title>Fiji eSports</title>
+    <meta name="title" content="Fj Esports">
+    <meta name="description" content="Fijis First Ever Esports Website. Play
+            local tournaments with others and win money!">
+    <meta name="keywords" content="Fiji, Esports, FJ Esports, Gaming, Nihaal
+            Prasad, Games, Tournaments.">
+    <meta name="robots" content="index, follow">
     <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-touch-icon-57x57.png" />
@@ -17,8 +23,26 @@
     <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-touch-icon-152x152.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-180x180.png" />
     <script src="//unpkg.com/alpinejs" defer></script>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="tailwind.css">
+
+<style>
+@media (min-width:475px) and (max-width:640px) {
+  .main-container{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .hide{
+    display: none;
+  }
+}
+.faqq {
+    background-color: #11141a;
+    margin-top: -30px;
+    padding-top: 10px;
+}
+.h-auto{
+    height:auto;
+}
+</style>
 </head>
 
 <body>
@@ -51,12 +75,13 @@
                     </div>
                     <div x-data="{ isShowing: false }" class="hidden sm:block sm:ml-6">
                         <div class="flex justify-end space-x-0.5 md:space-x-4">
-                            <a href="index.html" class=" px-3 py-2 rounded-md text-base md:text-lg lg:text-2xl font-medium"
+                            <a href="index.html"
+                                class=" px-3 py-2 rounded-md text-base md:text-lg lg:text-2xl font-medium"
                                 aria-current="page">HOME</a>
-                            <a href="freefire.html"
+                            <a href="tournaments.html"
                                 class=" hover:underline hover:opacity-90 px-3 py-2 rounded-md text-base md:text-lg lg:text-2xl font-medium">TOURNAMENTS</a>
-                            <a @click="isShowing = !isShowing" href="#"
-                                class=" hover:underline hover:opacity-90 px-3 py-2 rounded-md text-base md:text-lg lg:text-2xl font-medium">PROFILE</a>
+                            <button @click="isShowing = !isShowing" 
+                                class=" hover:underline hover:opacity-90 px-3 py-2 rounded-md text-base md:text-lg lg:text-2xl font-medium logged-in  hidden">PROFILE</button>
                         </div>
                         <div x-cloak x-show="isShowing" @click.outside="isShowing = false"
                             x-transition:enter="transition ease-out duration-100"
@@ -67,13 +92,9 @@
                             x-transition:leave-end="transform opacity-0 scale-95"
                             class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg dd py-1 ring-1 ring-black ring-opacity-5 focus:outline-none"
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                            <!-- Active: "bg-gray-100", Not Active: "" -->
-                            <a href="#" class="block px-4 py-2 text-sm font-medium" role="menuitem" tabindex="-1"
-                                id="user-menu-item-0">MY TOURNAMENTS</a>
-                            <a href="#" class="block px-4 py-2 text-sm font-medium" role="menuitem" tabindex="-1"
+                            <a href="profile.html" class="block px-4 py-2 text-sm font-medium" role="menuitem" tabindex="-1"
                                 id="user-menu-item-1">MY ACCOUNT</a>
-                            <a href="#" class="block px-4 py-2 text-sm font-medium" role="menuitem" tabindex="-1"
-                                id="user-menu-item-2">SIGN OUT</a>
+
                         </div>
                     </div>
                 </div>
@@ -86,139 +107,181 @@
                 x-transition:leave-end="transform opacity-0 scale-95" class="sm:hidden absolute w-full"
                 id="mobile-menu">
                 <div class="px-2 pt-2 pb-3 dropdown space-y-1">
-                    <a href="index.html" class=" block px-3 py-2 rounded-md text-base font-medium" aria-current="page">HOME</a>
-                    <a href="freefire.html"
+                    <a href="index.html" class=" block px-3 py-2 rounded-md text-base font-medium"
+                        aria-current="page">HOME</a>
+                    <a href="tournaments.html"
                         class=" hover:opacity-90 hover:underline block px-3 py-2 rounded-md text-base font-medium">TOURNAMENTS</a>
-                    <a href="#" @click="isShowing = !isShowing"
-                        class="hover:opacity-90 hover:underline block px-3 py-2 rounded-md text-base font-medium">PROFILE</a>
-                 </div>
+                    <a href="profile.html" @click="isShowing = !isShowing"
+                        class="hover:opacity-90 hover:underline block px-3 py-2 rounded-md text-base font-medium logged-in hidden">PROFILE</a>
+                </div>
             </div>
         </div>
     </nav>
     <!-- !CALL TO ACTION -->
     <!-- !CHECK PADDING RIGHT ON SMALL SCREENS WHEN PRODUCTION BUILD -->
     <header>
-        <h1 class="text-white font-extrabold xl:ml-16 xl:mr-96 xl:pr-20 xl:mt-28 xl:text-6xl text-2xl mt-7 pr-16 sm:mt-14 ml-10 sm:mr-48 sm:text-3xl lg:text-5xl md:text-4xl">
+        <h1 class="text-white font-extrabold xl:ml-16 xl:mr-96
+                        xl:pr-20 xl:mt-28 xl:text-6xl text-2xl mt-7 pr-16
+                        sm:mt-14 ml-10 sm:mr-48 sm:text-3xl lg:text-5xl
+                        md:text-4xl">
             Earn Money By Doing What You Love The Most
         </h1>
-        <button type="button" class="cta ml-10 xl:ml-16 sm:mt-4 mt-2 lg:w-52 lg:py-2 py-1 lg:px-10 text-center text-black font-bold uppercase sm:text-base text-xs w-32">Join
-            Now</button>
+        <a href="signup.html"> <button type="button" class="cta logged-out hidden
+                            ml-10 xl:ml-16 sm:mt-4 mt-2 lg:w-52 lg:py-2 py-1
+                            lg:px-10 text-center text-black font-bold uppercase
+                            sm:text-base text-xs w-32">Join
+                Now</button></a>
     </header>
     <!-- !MAIN SECTION WITH FEATURED GAMES -->
-<section class="featured mt-14" >
-    <h2 class="font-bold xl:text-5xl text-center pt-4 text-xl sm:text-2xl md:text-4xl mx-1" >
-        Fiji’s First Ever Esports Website
-    </h2>
-    <p class="sec mx-2 text-center xl:text-2xl font-normal mt-1 text-sm sm:text-base md:text-lg" >
-        Play against others and prove you’re the best of ‘em all!
-    </p>
-    <h3 class="xl:ml-16 font-medium xl:text-3xl text-white xl:mt-10 text-lg md:text-x md:text-2xl mt-3 ml-10">
-        FEATURED GAMES
-    </h3>
-    <section class="grid main-container grid-cols-2 gap-y-2 gap-x-2 sm:gap-x-0 sm:grid-cols-4 mx-auto sm:ml-16 ml-10 mt-8 mb-4 pb-4">
-        <div class="card">
-            <img class="rounded-md w-24 h-24 sm:w-28 sm:h-28 lg:w-40 lg:h-40" src="./images/FF-AVATAR.webp" alt="">
-            <p class="text-white font-medium"> FREE FIRE</p>
-        </div>
-        <div class="card">
-            <img class="rounded-md w-24 h-24 sm:w-28 sm:h-28 lg:w-40 lg:h-40" src="./images/COD-AVATAR.webp" alt="">
-            <p class="text-white font-medium"> CALL OF DUTY</p>
-        </div>
-        <div class="card">
-            <img class="rounded-md w-24 h-24 sm:w-28 sm:h-28 lg:w-40 lg:h-40" src="./images/PUBG-AVATAR.webp" alt="">
-            <p class="text-white font-medium"> PUBG MOBILE</p>
-        </div>
-        <div class="card hide">
-            <img class="rounded-md w-24 h-24 sm:w-28 sm:h-28 lg:w-40 lg:h-40" src="./images/WR-AVATAR.webp" alt="">
-            <p class="text-white font-medium"> WILD RIFT</p>
-        </div>
+    <section class="featured mt-14">
+        <h2 class="font-bold xl:text-5xl text-center pt-4 text-xl
+                        sm:text-2xl md:text-4xl mx-1">
+            Fiji’s First Ever Esports Website
+        </h2>
+        <p class="sec mx-2 text-center xl:text-2xl font-normal mt-1
+                        text-sm sm:text-base md:text-lg">
+            Play against others and prove you’re the best of ‘em
+            all!
+        </p>
+        <h3 class="xl:ml-16 font-medium xl:text-3xl text-white
+                        xl:mt-10 text-lg md:text-x md:text-2xl mt-3 ml-10">
+            FEATURED GAMES
+        </h3>
+        <section class="grid main-container grid-cols-2 gap-y-2 
+                        gap-x-2 sm:gap-x-0 sm:grid-cols-4 mx-auto sm:ml-16 ml-10
+                        mt-8 mb-4 pb-4 overflow-hidden">
+            <div class="card w-auto h-auto mb-4">
+                <img class="rounded-md w-24 h-24 sm:w-28 sm:h-28
+                                lg:w-40 lg:h-40" src="./images/FF-AVATAR.webp" alt="FreeFire Avatar">
+                <p class="text-white font-medium"> FREE FIRE</p>
+            </div>
+            <div class="card w-auto h-auto">
+                <img class="rounded-md w-24 h-24 sm:w-28 sm:h-28
+                                lg:w-40 lg:h-40" src="./images/COD-AVATAR.webp" alt="Call of Duty Avatar">
+                <p class="text-white font-medium"> COD MOBILE</p>
+            </div>
+            <div class="card w-auto h-auto mb-4">
+                <img class="rounded-md w-24 h-24 sm:w-28 sm:h-28
+                                lg:w-40 lg:h-40" src="./images/PUBG-AVATAR.webp" alt="PUBG AVATAR">
+                <p class="text-white font-medium"> PUBG MOBILE</p>
+            </div>
+            <div class="card w-auto h-auto hide">
+                <img class="rounded-md w-24 h-24 sm:w-28 sm:h-28
+                                lg:w-40 lg:h-40" src="./images/WR-AVATAR.webp" alt="WILD RIFT AVATAR">
+                <p class="text-white font-medium"> WILD RIFT</p>
+            </div>
+        </section>
     </section>
-</section>
-<!-- !FAQ SECTION -->
-<section>
-    <ul>
-        <h3 class="font-medium text-white text-center text-xl md:text-2xl lg:text-3xl"> FREQUENTLY ASKED QUESTIONS </h3>
-        <ul class="mx-14 mt-4 accordion">
+    <!-- !FAQ SECTION -->
+    <section class="faqq">
+        <ul>
+            <h3 class="font-medium text-white text-center text-xl
+                            md:text-2xl lg:text-3xl"> FREQUENTLY ASKED QUESTIONS
+            </h3>
+            <ul class="mx-14 mt-4 accordion">
                 <li class="relative" x-data="{selected:null}">
-                    <button type="button" class="rounded-md bg-main w-full px-4 py-3 text-left"
-                        @click="selected !== 1 ? selected = 1 : selected = null">
-                        <div class="flex items-center justify-between font-medium">
-                            <span>Do all tournaments have price money? </span>
+                    <button type="button" class="rounded-md bg-main
+                                    w-full px-4 py-3 text-left" @click="selected !== 1 ? selected= 1 :
+                                    selected= null">
+                        <div class="flex items-center
+                                        justify-between font-medium">
+                            <span>Do all tournaments have price
+                                money? </span>
                         </div>
                     </button>
-                    <div class="relative overflow-hidden transition-all max-h-0 duration-300 border-r border-l border-b border-opacity-5 rounded-b-lg"
-                        x-ref="container1"
-                        x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
-                        <div class="p-6 bg-opacity-20 text-white text-sm">
-                            <p>Yes. All tournaments held by Fj Esports have prize money.</p>
+                    <div class="relative overflow-hidden
+                                    transition-all max-h-0 duration-300 border-r
+                                    border-l border-b border-opacity-5
+                                    rounded-b-lg" x-ref="container1" x-bind:style="selected == 1 ? 'max-height: '
+                                    + $refs.container1.scrollHeight + 'px' :
+                                    ''">
+                        <div class="p-6 bg-opacity-20 text-white
+                                        text-sm">
+                            <p>Yes. All tournaments held by Fj
+                                Esports have prize money.</p>
                         </div>
                     </div>
                 </li>
                 <li class="relative" x-data="{selected:null}">
-                    <button type="button" class="rounded-md bg-main mt-2 w-full px-4 py-3 text-left"
-                        @click="selected !== 2 ? selected = 2 : selected = null">
+                    <button type="button" class="rounded-md bg-main
+                                    mt-2 w-full px-4 py-3 text-left" @click="selected !== 2 ? selected= 2 :
+                                    selected= null">
                         <div class="font-medium"">
-                            <span> When will i receive the money i earned? </span>        
+                                        <span> When will i receive the money i
+                                            earned? </span>
+                                    </div>
+                                </button>
+                                <div class=" relative overflow-hidden transition-all max-h-0 duration-300 border-r
+                            border-l border-b border-opacity-5 rounded-b-lg" x-ref="container2" x-bind:style="selected == 2 ? 'max-height: '
+                                    + $refs.container2.scrollHeight + 'px' :
+                                    ''">
+                            <div class="p-6 bg-opacity-20 text-white">
+                                <p> You will receive the prize money after being contacted by our team via email.</p>
+                            </div>
                         </div>
-                    </button>
-                   <div class="relative overflow-hidden transition-all max-h-0 duration-300 border-r border-l border-b border-opacity-5 rounded-b-lg" 
-                        x-ref="container2"
-                        x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
-                        <div class="p-6 bg-opacity-20 text-white">
-                            <p>You will receive the prize money on the 1st of every new month directly in your Specified Account.</p>
-                        </div>
-                    </div>
                 </li>
                 <li class="relative" x-data="{selected:null}">
-                    <button type="button" class="rounded-md bg-main mt-2 w-full px-4 py-3 text-left"
-                        @click="selected !== 3 ? selected = 3 : selected = null">
-                        <div class="flex items-center justify-between font-medium"">
-                            <span>Is there a way for me to hold my own tournaments? </span>
-                        </div> 
-                    </button>
-                    <div class="relative overflow-hidden transition-all max-h-0 duration-300 border-r border-l border-b border-opacity-5 rounded-b-lg" 
-                        x-ref="container3"
-                        x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
-                        <div class="p-6 bg-opacity-20 text-white">
-                            <p>Unfortunately, as of the current time we do not have a way for you to hold your own tournament but as FJ Esports continues to grow, this feature will eventually be added.</p>
+                    <button type="button" class="rounded-md bg-main
+                                    mt-2 w-full px-4 py-3 text-left" @click="selected !== 3 ? selected= 3 :
+                                    selected= null">
+                        <div class="flex items-center
+                                        justify-between font-medium"">
+                                        <span>Is there a way for me to hold my
+                                            own tournaments? </span>
+                                    </div>
+                                </button>
+                                <div class=" relative overflow-hidden transition-all max-h-0 duration-300 border-r
+                            border-l border-b border-opacity-5 rounded-b-lg" x-ref="container3" x-bind:style="selected == 3 ? 'max-height: '
+                                    + $refs.container3.scrollHeight + 'px' :
+                                    ''">
+                            <div class="p-6 bg-opacity-20 text-white">
+                                <p>Unfortunately, as of the current time
+                                    we do not have a way for you to hold
+                                    your own tournament but as FJ
+                                    Esports continues to grow, this
+                                    feature will eventually be added.</p>
+                            </div>
                         </div>
-                    </div>
                 </li>
             </ul>
     </section>
-<!-- !FOOTER SECTION WITH LINKS -->
-<footer class="mt-14 ">
-    <section class="grid lg:grid-cols-4 sm:grid-cols-2 ml-10 mr-6 grid-cols-1 gap-10 py-6 ">
-        <div>
-            <h3 class="text-white font-bold lg:text-lg text-base">SOCIAL LINKS</h3>
-            <a class="lg:text-base block mt-2 text font-semibold text-sm" href="">INSTAGRAM</a> 
-            <a class="lg:text-base block mt-2 text font-semibold text-sm" href="">FACEBOOK</a>
+    <!-- !FOOTER SECTION WITH LINKS -->
+    <footer class="mt-14 pb-4">
+        <section class="grid lg:grid-cols-4 sm:grid-cols-2 ml-10 mr-6 grid-cols-1 gap-10 py-6 ">
+            <div>
+                <h3 class="text-white font-bold lg:text-lg text-sm">SOCIAL LINKS</h3>
+                <a class="lg:text-base block mt-2 text font-semibold text-xs"
+                    href="https://www.instagram.com/fj_esports/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+                <a class="lg:text-base block mt-2 text font-semibold text-xs" href="">FACEBOOK</a>
+            </div>
+            <div>
+                <h3 class="text-white font-bold lg:text-lg text-sm">MORE INFO</h3>
+                <a class="lg:text-base block mt-2 text font-semibold text-xs" href="">ABOUT US</a>
+                <a class="lg:text-base block mt-2 text font-semibold text-xs" href="">TERMS OF SERVICE</a>
+            </div>
+            <div>
+                <h3 class="text-white font-bold lg:text-lg text-sm">OTHER RESOURCES</h3>
+                <a class="lg:text-base block mt-2 text font-semibold text-xs" href="contact.html">CONTACT US</a>
+                <a class="lg:text-base block mt-2 text font-semibold text-xs" href="">REFUND POLICY</a>
+            </div>
+            <div>
+                <h3 class="text-white font-bold lg:text-2xl text-base">Join Our Discord Community</h3>
+                <a class="lg:text-base block mt-2 text font-semibold text-xs" href="https://discord.gg/EVZb4pYjTY" target="_blank" rel="noopener">FJ
+                    ESPORTS DISCORD SERVER</a>
+            </div>
+        </section>
+        <div class="flex md:flex-row flex-col text flex-auto font-semibold ml-10 mr-6 pt-1 border-t border-opacity-5">
+            <div>
+                <h4 class="text-center md:text-left text-xs lg:text-sm">COPYRIGHT 2021 FJ ESPORTS | ALL RIGHTS RESERVED. </h4>
+            </div>
+            <div class="flex md:flex-row md:justify-end justify-center md:flex-grow ">
+                <p class="text-center text-xs lg:text-sm md:text-left"> MADE WITH LOVE BY LUCI.</p>
+                <a class="self-center pas mx-1" href="https://www.instagram.com/nihaaal_269/" target="_blank" rel="noopener"><img class="h-4 w-4"
+                        src="./images/instagram-brands.svg" alt="Instagram Logo"></a>
+            </div>
         </div>
-        <div>
-            <h3 class="text-white font-bold lg:text-lg text-base">MORE INFO</h3>
-            <a class="lg:text-base block mt-2 text font-semibold text-sm" href="">ABOUT US</a> 
-            <a class="lg:text-base block mt-2 text font-semibold text-sm" href="">TERMS OF SERVICE</a>
-        </div>
-        <div>
-            <h3 class="text-white font-bold lg:text-lg text-base">OTHER RESOURCES</h3>
-            <a class="lg:text-base block mt-2 text font-semibold text-sm" href="">CONTACT US</a> 
-            <a class="lg:text-base block mt-2 text font-semibold text-sm" href="">COMING SOON</a>
-        </div>
-        <div>
-            <h3 class="text-white font-bold lg:text-2xl text-xl">Join Our Discord Community</h3>
-            <a class="lg:text-base block mt-2 text font-semibold text-sm" href="">FJ ESPORTS DISCORD SERVER</a> 
-        </div>
-    </section>
-    <div class="flex md:flex-row flex-col text flex-auto font-semibold ml-10 mr-6 pt-1 border-t border-opacity-5">
-     <div>
-         <h4 class="text-center md:text-left">COPYRIGHT 2021 FJ ESPORTS | ALL RIGHTS RESERVED. </h4>
-     </div>
-     <div class="flex md:flex-row md:justify-end justify-center md:flex-grow">
-        <p class="text-center md:text-left"> MADE WITH LOVE BY LUCI.</p>
-         <a class="self-center pas mx-1" href="https://www.instagram.com/nihaaal_269/"><img class="h-4 w-4" src="./images/instagram-brands.svg" alt=""></a>
-     </div>
-    </div>
-</footer>
+    </footer>
+
 </body>
 
 </html>
